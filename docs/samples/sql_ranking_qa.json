@@ -1,0 +1,39 @@
+{
+  "slug": "sql_ranking_qa",
+  "title": "SQL ranking over normalized annual-report tables",
+  "question_id": 2,
+  "question": "2019年负债总额第2高的上市公司是？",
+  "route": {
+    "question_type": "E",
+    "route_name": "structured_query",
+    "route_label": "SQL / 统计分析",
+    "execution_path": [
+      "Query Router",
+      "Structured Query",
+      "Synthesis"
+    ]
+  },
+  "answer": "公司全称为中远海运控股股份有限公司。",
+  "evidence": [
+    {
+      "evidence_type": "sql",
+      "source": "company_table",
+      "content": "select 公司全称 from company_table where 年份 = '2019' order by 负债合计 desc limit 1 offset 1",
+      "year": "2019",
+      "table_name": "company_table"
+    },
+    {
+      "evidence_type": "sql_result",
+      "source": "company_table",
+      "content": "中远海运控股股份有限公司",
+      "year": "2019",
+      "table_name": "company_table"
+    }
+  ],
+  "validation": {
+    "regression_passed": true,
+    "latency_ms": 3746.2,
+    "artifact": "docs/samples/sql_ranking_qa.json"
+  },
+  "notes": "This sample demonstrates why the agent uses a dedicated SQL route instead of forcing ranking questions through generic retrieval."
+}

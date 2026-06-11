@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "slug": "structured_field_qa",
+    "name": "单公司结构化字段题",
+    "expectation": "应走结构化精准问答路径，并返回字段值",
+    "expected_route_name": "structured_precise_qa"
+  },
+  {
+    "id": 2,
+    "slug": "sql_ranking_qa",
+    "name": "排名统计题",
+    "expectation": "应走 SQL 或统计分析链路",
+    "expected_route_name": "structured_query"
+  },
+  {
+    "id": 9,
+    "slug": "open_report_boundary",
+    "name": "开放问答边界题",
+    "expectation": "应走开放问答路径，并基于证据拒绝编造未披露细节",
+    "expected_route_name": "text_synthesis"
+  },
+  {
+    "id": 26,
+    "slug": "cross_year_compare",
+    "name": "跨年份对比题",
+    "expectation": "应走结构化比较链路并支持相同/不同判断",
+    "expected_route_name": "structured_precise_qa"
+  }
+]

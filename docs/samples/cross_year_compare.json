@@ -1,0 +1,39 @@
+{
+  "slug": "cross_year_compare",
+  "title": "Cross-year comparison on structured annual-report facts",
+  "question_id": 26,
+  "question": "当升科技2019-2020年这两年的法定代表人是否都相同？",
+  "route": {
+    "question_type": "A",
+    "route_name": "structured_precise_qa",
+    "route_label": "结构化精准问答",
+    "execution_path": [
+      "Query Router",
+      "Document Evidence Retrieval",
+      "Synthesis"
+    ]
+  },
+  "answer": "2019年法定代表人为李建忠，2020年法定代表人为陈彦彬，两年不相同。",
+  "evidence": [
+    {
+      "evidence_type": "table_row",
+      "source": "structured_table",
+      "content": "\"法定代表人\"是李建忠",
+      "year": "2019",
+      "table_name": "basic_info"
+    },
+    {
+      "evidence_type": "table_row",
+      "source": "structured_table",
+      "content": "\"法定代表人\"是陈彦彬",
+      "year": "2020",
+      "table_name": "basic_info"
+    }
+  ],
+  "validation": {
+    "regression_passed": true,
+    "latency_ms": 1747.71,
+    "artifact": "docs/samples/cross_year_compare.json"
+  },
+  "notes": "This sample shows a common finance QA pattern: compare the same entity attribute across years and explain the conclusion with concrete evidence."
+}

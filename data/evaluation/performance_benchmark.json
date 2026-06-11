@@ -1,0 +1,43 @@
+{
+  "benchmark_count": 4,
+  "total_elapsed_ms": 11856.38,
+  "avg_latency_ms": 2964.09,
+  "results": [
+    {
+      "id": 1,
+      "question": "请告诉我龙岩卓越新能源股份有限公司2021年的应付账款的具体数值",
+      "success": true,
+      "status": "success",
+      "route_name": "structured_precise_qa",
+      "question_type": "C",
+      "latency_ms": 2411.82
+    },
+    {
+      "id": 2,
+      "question": "2019年负债总额第2高的上市公司是？",
+      "success": true,
+      "status": "success",
+      "route_name": "structured_query",
+      "question_type": "E",
+      "latency_ms": 3746.2
+    },
+    {
+      "id": 9,
+      "question": "根据青岛港国际股份有限公司2019年的年报数据，能否简要介绍公司报告期内破产重整相关事项的详情。",
+      "success": true,
+      "status": "success",
+      "route_name": "text_synthesis",
+      "question_type": "F",
+      "latency_ms": 3950.65
+    },
+    {
+      "id": 26,
+      "question": "当升科技2019-2020年这两年的法定代表人是否都相同？",
+      "success": true,
+      "status": "success",
+      "route_name": "structured_precise_qa",
+      "question_type": "A",
+      "latency_ms": 1747.71
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+[
+  {
+    "id": 1,
+    "name": "单公司结构化字段题",
+    "expectation": "应走结构化精准问答路径，并返回字段值",
+    "passed": true,
+    "has_answer": true,
+    "has_execution_path": true,
+    "route_name": "structured_precise_qa",
+    "status": "success",
+    "success": true,
+    "failure_reason": null,
+    "answer_preview": "2021年龙岩卓越新能源股份有限公司的应付账款是14908230.95元。"
+  },
+  {
+    "id": 2,
+    "name": "排名统计题",
+    "expectation": "应走 SQL 或统计分析链路",
+    "passed": true,
+    "has_answer": true,
+    "has_execution_path": true,
+    "route_name": "structured_query",
+    "status": "success",
+    "success": true,
+    "failure_reason": null,
+    "answer_preview": "公司全称为中远海运控股股份有限公司。"
+  },
+  {
+    "id": 9,
+    "name": "开放问答边界题",
+    "expectation": "应走开放问答路径，并基于证据拒绝编造未披露细节",
+    "passed": true,
+    "has_answer": true,
+    "has_execution_path": true,
+    "route_name": "text_synthesis",
+    "status": "success",
+    "success": true,
+    "failure_reason": null,
+    "answer_preview": "年报片段中未明确披露。"
+  },
+  {
+    "id": 26,
+    "name": "跨年份对比题",
+    "expectation": "应走结构化比较链路并支持相同/不同判断",
+    "passed": true,
+    "has_answer": true,
+    "has_execution_path": true,
+    "route_name": "structured_precise_qa",
+    "status": "success",
+    "success": true,
+    "failure_reason": null,
+    "answer_preview": "2019年法定代表人为李建忠，2020年法定代表人为陈彦彬，两年不相同。"
+  }
+]

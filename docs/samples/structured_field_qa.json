@@ -1,0 +1,32 @@
+{
+  "slug": "structured_field_qa",
+  "title": "Exact structured field lookup from annual-report tables",
+  "question_id": 1,
+  "question": "请告诉我龙岩卓越新能源股份有限公司2021年的应付账款的具体数值",
+  "route": {
+    "question_type": "C",
+    "route_name": "structured_precise_qa",
+    "route_label": "结构化精准问答",
+    "execution_path": [
+      "Query Router",
+      "Document Evidence Retrieval",
+      "Synthesis"
+    ]
+  },
+  "answer": "2021年龙岩卓越新能源股份有限公司的应付账款是14908230.95元。",
+  "evidence": [
+    {
+      "evidence_type": "table_row",
+      "source": "structured_table",
+      "content": "\"应付账款\"是14908230.95元",
+      "year": "2021",
+      "table_name": "cbs_info"
+    }
+  ],
+  "validation": {
+    "regression_passed": true,
+    "latency_ms": 2411.82,
+    "artifact": "docs/samples/structured_field_qa.json"
+  },
+  "notes": "This sample shows the structured route returning an exact numeric answer with explicit field-level evidence."
+}

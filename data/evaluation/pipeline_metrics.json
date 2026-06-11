@@ -1,0 +1,55 @@
+{
+  "provenance": {
+    "note": "Public demo snapshot rebuilt from bundled benchmark cards instead of the full private artifact archive.",
+    "benchmark_card": "benchmarks/benchmark_card.json",
+    "open_badcase_summary": "data/evaluation/open_badcase_sample_summary.json"
+  },
+  "classification": {
+    "definition": {
+      "classification_accuracy": "Original evaluation exact classification accuracy from the private benchmark run.",
+      "bucket_accuracy": "Original evaluation route-bucket accuracy from the private benchmark run."
+    },
+    "summary": {
+      "evaluated_count": 1000,
+      "exact_accuracy": 0.944,
+      "bucket_accuracy": 0.998
+    }
+  },
+  "sql_success": {
+    "definition": {
+      "sql_generation_success_rate": "Original evaluation SQL generation success rate.",
+      "sql_execution_success_rate": "Original evaluation SQL execution success rate."
+    },
+    "summary": {
+      "expected_sql_count": 200,
+      "sql_generation_success_rate": 1.0,
+      "sql_execution_success_rate": 1.0
+    }
+  },
+  "answer_accuracy": {
+    "definition": {
+      "structured_answer_accuracy": "Original evaluation structured-question answer accuracy.",
+      "open_answer_accuracy": "Original evaluation open-question answer accuracy."
+    },
+    "summary": {
+      "structured_answer_accuracy": 0.6656,
+      "open_answer_accuracy": 0.2612,
+      "structured_count": 700,
+      "open_count": 300
+    }
+  },
+  "public_demo": {
+    "summary": {
+      "replay_sample_count": 4,
+      "replay_sample_ids": [
+        1,
+        2,
+        9,
+        26
+      ],
+      "open_badcase_sample_count": 20,
+      "open_badcase_success_count": 19,
+      "avg_latency_ms": 2964.09
+    }
+  }
+}

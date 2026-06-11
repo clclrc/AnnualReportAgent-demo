@@ -1,0 +1,38 @@
+{
+  "project": "AnnualReportAgent-demo",
+  "public_demo_scope": {
+    "full_private_corpus_years": [
+      2019,
+      2020,
+      2021
+    ],
+    "public_bundle": [
+      "extracted structured tables",
+      "4 public replay sample cards",
+      "one small annual report text slice",
+      "offline evaluation summaries"
+    ],
+    "public_sample_ids": [
+      1,
+      2,
+      9,
+      26
+    ]
+  },
+  "metrics": {
+    "classification_exact_accuracy": 0.944,
+    "route_bucket_accuracy": 0.998,
+    "sql_generation_success_rate": 1.0,
+    "sql_execution_success_rate": 1.0,
+    "structured_answer_accuracy": 0.6656,
+    "open_answer_accuracy": 0.2612,
+    "regression_passed": "4/4",
+    "avg_latency_ms": 2964.09
+  },
+  "provenance": {
+    "pipeline_metrics": "data/evaluation/pipeline_metrics.json",
+    "performance_benchmark": "data/evaluation/performance_benchmark.json",
+    "regression_report": "data/evaluation/regression_report.json",
+    "open_badcase_summary": "data/evaluation/open_badcase_sample_summary.json"
+  }
+}

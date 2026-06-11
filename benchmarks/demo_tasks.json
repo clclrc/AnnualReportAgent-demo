@@ -1,0 +1,26 @@
+[
+  {
+    "sample": "structured_field_qa",
+    "question_id": 1,
+    "category": "structured_field_lookup",
+    "question": "请告诉我龙岩卓越新能源股份有限公司2021年的应付账款的具体数值"
+  },
+  {
+    "sample": "sql_ranking_qa",
+    "question_id": 2,
+    "category": "sql_ranking",
+    "question": "2019年负债总额第2高的上市公司是？"
+  },
+  {
+    "sample": "open_report_boundary",
+    "question_id": 9,
+    "category": "open_text_grounded_refusal",
+    "question": "根据青岛港国际股份有限公司2019年的年报数据，能否简要介绍公司报告期内破产重整相关事项的详情。"
+  },
+  {
+    "sample": "cross_year_compare",
+    "question_id": 26,
+    "category": "cross_year_comparison",
+    "question": "当升科技2019-2020年这两年的法定代表人是否都相同？"
+  }
+]

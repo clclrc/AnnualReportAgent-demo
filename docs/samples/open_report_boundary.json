@@ -1,0 +1,37 @@
+{
+  "slug": "open_report_boundary",
+  "title": "Grounded open-question answer with evidence-based refusal",
+  "question_id": 9,
+  "question": "根据青岛港国际股份有限公司2019年的年报数据，能否简要介绍公司报告期内破产重整相关事项的详情。",
+  "route": {
+    "question_type": "F",
+    "route_name": "text_synthesis",
+    "route_label": "文本总结问答",
+    "execution_path": [
+      "Query Router",
+      "Document Evidence Retrieval",
+      "Synthesis"
+    ]
+  },
+  "answer": "年报片段中未明确披露。",
+  "evidence": [
+    {
+      "evidence_type": "text_block",
+      "source": "annual_report_text",
+      "content": "九、破产重整相关事项 □适用 √不适用",
+      "table_name": "text_block_1"
+    },
+    {
+      "evidence_type": "text_block",
+      "source": "annual_report_text",
+      "content": "4、信托目的已实现或者无法实现； 终止的条件 5、本信托被撤销；",
+      "table_name": "text_block_2"
+    }
+  ],
+  "validation": {
+    "regression_passed": true,
+    "latency_ms": 3950.65,
+    "artifact": "docs/samples/open_report_boundary.json"
+  },
+  "notes": "This sample is useful in interviews because it shows the system refusing to hallucinate details when the retrieved evidence does not support a richer answer."
+}

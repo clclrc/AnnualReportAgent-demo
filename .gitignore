@@ -1,0 +1,11 @@
+.env
+.env.local
+__pycache__/
+.pytest_cache/
+*.pyc
+*.pyo
+.DS_Store
+
+data/check/
+data/*.main.log
+data/result_*.json
