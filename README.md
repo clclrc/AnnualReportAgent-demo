@@ -98,7 +98,7 @@ flowchart LR
 
 ## Start Here
 
-If a reviewer only spends 2-3 minutes on the repo, these are the best entry points:
+Useful entry points for understanding the repository:
 
 - `README.md`
   High-level project framing, benchmark boundary, and run instructions.
