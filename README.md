@@ -1,6 +1,6 @@
 # AnnualReportAgent-demo
 
-Public demo repository for a multi-route financial annual report QA agent. This version is trimmed for GitHub review: it keeps the workflow, API surface, benchmark summaries, replayable public samples, and a small public data subset, while leaving out the private full PDF corpus, training checkpoints, and bulk experiment artifacts.
+Public demo repository for a multi-route financial annual report QA agent. This version is trimmed for public release: it keeps the workflow, API surface, benchmark summaries, replayable public samples, and a small public data subset, while leaving out the private full PDF corpus, training checkpoints, and bulk experiment artifacts.
 
 [中文说明](./README.zh-CN.md)
 
@@ -39,7 +39,7 @@ This project answers Chinese financial annual report questions with different ex
 - Open report synthesis: retrieve relevant report text blocks and generate grounded summaries or evidence-based refusals.
 - Evaluation loop: keep benchmark summary cards, replay representative cases, and retain a small public regression set.
 
-The original private workspace used a larger 2019-2021 A-share annual report corpus. The public demo keeps a 14-record structured subset, one report text slice, four public sample cards, and summary benchmark evidence to make the repository runnable and interview-friendly without exposing the full experiment archive.
+The original private workspace used a larger 2019-2021 A-share annual report corpus. The public demo keeps a 14-record structured subset, one report text slice, four public sample cards, and summary benchmark evidence to make the repository runnable without exposing the full experiment archive.
 
 ## Problem
 
@@ -50,7 +50,7 @@ Financial annual report QA is not one problem.
 - Some are better handled as SQL over normalized structured data.
 - Some are open-ended and need evidence retrieval from long report text.
 
-Treating all of them as one retrieval prompt often creates avoidable errors, weak provenance, or slow responses. This demo shows a route-aware agent design instead.
+Treating all of them as one retrieval prompt often creates avoidable errors, weak traceability, or slow responses. This demo shows a route-aware agent design instead.
 
 ## Workflow / Architecture
 
@@ -94,7 +94,7 @@ flowchart LR
   Offline scripts that regenerate public benchmark summary files from bundled sample cards and metric snapshots.
 
 - `scripts/replay_demo.py`
-  No-key demo replay entry for interview walkthroughs.
+  No-key demo replay entry for a quick project walkthrough.
 
 ## Start Here
 
@@ -152,7 +152,7 @@ Useful entry points for understanding the repository:
 
 ## Public Bundle
 
-The repo intentionally ships only a small, interview-friendly public subset:
+The repo intentionally ships only a small public subset:
 
 - `data/public_bundle_manifest.json`
   Machine-readable inventory of what is intentionally included in the public demo.
@@ -170,7 +170,7 @@ The repo intentionally ships only a small, interview-friendly public subset:
   The Qingdao Port 2019 text fragment used by the open-question refusal demo.
 
 - `legacy/`
-  Older preprocessing and experiment scripts kept for provenance, but intentionally separated from the quickstart path.
+  Older preprocessing and experiment scripts kept for reference, but intentionally separated from the quickstart path.
 
 ## How to Run
 
@@ -296,4 +296,4 @@ Additional public evidence kept in-repo:
 - Live inference depends on an external OpenAI-compatible LLM endpoint; the replay demo is offline, but `POST /v1/query` is not.
 - Open-ended report questions remain the weakest area, which is visible in the open-answer metric.
 - The preprocessing pipeline still expects local PDF tooling such as `xpdf`, `camelot`, and `ghostscript`.
-- The code is kept close to the original project structure to preserve provenance, so it is intentionally less framework-polished than a greenfield package.
+- The code is kept close to the original project structure, so it is intentionally less framework-polished than a greenfield package.

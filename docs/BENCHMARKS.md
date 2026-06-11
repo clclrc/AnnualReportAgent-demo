@@ -26,7 +26,7 @@ The public repo keeps public sample cards, summary metrics, and recomputation sc
 - `evaluation/pipeline_metrics.py`
 - `evaluation/run_regression.py`
 
-This means reviewers can inspect both:
+This means readers can inspect both:
 
 - the final metric numbers
 - the code path that reproduces the public summary files from the bundled demo cards
@@ -41,4 +41,4 @@ The most convincing signal in this demo is not a single accuracy number. It is t
 - bounded public sample cards
 - reproducible offline summaries
 
-That combination is what makes the repository useful for LLM agent / RAG interviews.
+That combination is what makes the repository useful for understanding the system design and evaluation loop.

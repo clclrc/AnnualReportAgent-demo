@@ -1,6 +1,6 @@
 # Architecture Notes
 
-This public demo keeps the project close to its original engineering shape so reviewers can see the real system boundaries.
+This public demo keeps the project close to its original engineering shape so the system boundaries remain clear.
 
 ## Request Flow
 
