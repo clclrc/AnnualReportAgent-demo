@@ -1,4 +1,4 @@
-import prompt_util
+from . import prompt_util
 
 
 PROMPT_REGISTRY_VERSION = "2026-04-14.v1"

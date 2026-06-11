@@ -1,7 +1,7 @@
 import os
 import shutil
 from config import cfg
-from file import load_pdf_info, load_pdf_pure_text, load_pdf_tables, load_total_tables
+from app.file import load_pdf_info, load_pdf_pure_text, load_pdf_tables, load_total_tables
 
 
 '''

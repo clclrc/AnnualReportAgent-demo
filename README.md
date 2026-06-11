@@ -30,7 +30,7 @@ Treating all of them as one retrieval prompt often creates avoidable errors, wea
 
 ```mermaid
 flowchart LR
-    U["User Question"] --> API["FastAPI Service<br/>service_api.py"]
+    U["User Question"] --> API["FastAPI Service<br/>app/service_api.py"]
     API --> RT["Runtime Artifacts<br/>classification + keywords + optional NL2SQL"]
     RT --> WF["FinancialAnnualReportWorkflow"]
     WF --> QR["Query Router"]
@@ -49,19 +49,19 @@ flowchart LR
 
 ## Key Components
 
-- `service_api.py`
+- `app/service_api.py`
   FastAPI entry point with `GET /health`, `POST /v1/query`, and `POST /v1/query/stream`.
 
-- `financial_agent_workflow.py`
+- `app/financial_agent_workflow.py`
   Core routed workflow with `QueryRouter`, `DocumentEvidenceRetriever`, `StructuredQueryExecutor`, and `AnswerSynthesizer`.
 
-- `api_llm.py`
+- `app/api_llm.py`
   OpenAI-compatible LLM adapter used for classification, keyword extraction, SQL generation, and answer synthesis.
 
-- `company_table.py`
+- `app/company_table.py`
   Structured finance table loader and SQL execution utilities for ranking / aggregation questions.
 
-- `recall_report_text.py` and `recall_report_names.py`
+- `app/recall_report_text.py` and `app/recall_report_names.py`
   Evidence retrieval for open-ended questions and table-level matching.
 
 - `evaluation/`
@@ -75,10 +75,12 @@ flowchart LR
 ```text
 .
 ├── .env.example
-├── service_api.py
-├── financial_agent_workflow.py
-├── api_llm.py
-├── company_table.py
+├── app/
+│   ├── service_api.py
+│   ├── financial_agent_workflow.py
+│   ├── api_llm.py
+│   ├── company_table.py
+│   └── ...
 ├── data/
 │   ├── CompanyTable.csv
 │   ├── basic_info.json
@@ -95,6 +97,10 @@ flowchart LR
 ├── docs/
 │   └── samples/
 ├── evaluation/
+├── legacy/
+│   ├── preprocess.py
+│   ├── main.py
+│   └── ...
 ├── scripts/
 └── tests/
 ```
@@ -117,6 +123,9 @@ The repo intentionally ships only a small, interview-friendly public subset:
 
 - `1` report text slice under `data/pdf_docs/`
   The Qingdao Port 2019 text fragment used by the open-question refusal demo.
+
+- `legacy/`
+  Older preprocessing and experiment scripts kept for provenance, but intentionally separated from the quickstart path.
 
 ## How to Run
 
@@ -145,7 +154,7 @@ python scripts/replay_demo.py --sample open_report_boundary
 ### 3. Start the API server
 
 ```bash
-uvicorn service_api:app --reload
+uvicorn app.service_api:app --reload
 ```
 
 Health check:

@@ -7,8 +7,8 @@ import numpy as np
 import pandas as pd
 
 from config import cfg
-from file import load_pdf_info, load_tables_of_years
-from file import load_total_tables
+from .file import load_pdf_info, load_tables_of_years
+from .file import load_total_tables
 
 _COMPANY_TABLE_CACHE = None
 _SQL_CONN = None

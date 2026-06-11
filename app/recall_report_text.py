@@ -6,9 +6,9 @@ from loguru import logger
 from difflib import SequenceMatcher
 from fastbm25 import fastbm25
 
-import re_util
+from . import re_util
 from config import cfg
-from file import load_pdf_pages
+from .file import load_pdf_pages
 
 
 def merge_idx(indexes, total_len, prefix=0, suffix=1):

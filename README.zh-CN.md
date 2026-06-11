@@ -30,7 +30,7 @@
 
 ```mermaid
 flowchart LR
-    U["用户问题"] --> API["FastAPI 服务<br/>service_api.py"]
+    U["用户问题"] --> API["FastAPI 服务<br/>app/service_api.py"]
     API --> RT["运行时产物<br/>分类 + 关键词 + 可选 NL2SQL"]
     RT --> WF["FinancialAnnualReportWorkflow"]
     WF --> QR["Query Router"]
@@ -49,19 +49,19 @@ flowchart LR
 
 ## Key Components
 
-- `service_api.py`
+- `app/service_api.py`
   FastAPI 入口，提供 `GET /health`、`POST /v1/query`、`POST /v1/query/stream`。
 
-- `financial_agent_workflow.py`
+- `app/financial_agent_workflow.py`
   核心工作流，包含 `QueryRouter`、`DocumentEvidenceRetriever`、`StructuredQueryExecutor`、`AnswerSynthesizer`。
 
-- `api_llm.py`
+- `app/api_llm.py`
   OpenAI 兼容接口的 LLM 适配层，用于分类、关键词提取、SQL 生成和答案综合。
 
-- `company_table.py`
+- `app/company_table.py`
   结构化总表加载和 SQL 执行工具，负责排名 / 聚合类问题。
 
-- `recall_report_text.py` 与 `recall_report_names.py`
+- `app/recall_report_text.py` 与 `app/recall_report_names.py`
   文本证据召回和表格级匹配逻辑。
 
 - `evaluation/`
@@ -75,10 +75,12 @@ flowchart LR
 ```text
 .
 ├── .env.example
-├── service_api.py
-├── financial_agent_workflow.py
-├── api_llm.py
-├── company_table.py
+├── app/
+│   ├── service_api.py
+│   ├── financial_agent_workflow.py
+│   ├── api_llm.py
+│   ├── company_table.py
+│   └── ...
 ├── data/
 │   ├── CompanyTable.csv
 │   ├── basic_info.json
@@ -95,6 +97,10 @@ flowchart LR
 ├── docs/
 │   └── samples/
 ├── evaluation/
+├── legacy/
+│   ├── preprocess.py
+│   ├── main.py
+│   └── ...
 ├── scripts/
 └── tests/
 ```
@@ -117,6 +123,9 @@ flowchart LR
 
 - `data/pdf_docs/` 下 `1` 份年报文本切片
   用于开放题拒答示例的青岛港 2019 年文本片段。
+
+- `legacy/`
+  保留原项目里较旧的预处理和实验脚本，用于证明项目演化过程，但默认 quickstart 不依赖它们。
 
 ## How to Run
 
@@ -145,7 +154,7 @@ python scripts/replay_demo.py --sample open_report_boundary
 ### 3. 启动 API 服务
 
 ```bash
-uvicorn service_api:app --reload
+uvicorn app.service_api:app --reload
 ```
 
 健康检查：

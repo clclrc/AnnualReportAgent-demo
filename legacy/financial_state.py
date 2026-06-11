@@ -12,11 +12,11 @@ from loguru import logger
 from datetime import datetime
 
 from config import cfg
-from re_util import clean_row_name
-from pdf_util import PdfExtractor
-from file import get_raw_pdf_path, get_pdf_table_path
-from file import load_pdf_info, load_test_questions
-from file import load_pdf_pure_text
+from app.re_util import clean_row_name
+from legacy.pdf_util import PdfExtractor
+from app.file import get_raw_pdf_path, get_pdf_table_path
+from app.file import load_pdf_info, load_test_questions
+from app.file import load_pdf_pure_text
 
 DEBUG = False
 

@@ -11,7 +11,7 @@ OUTPUT_DIR = os.path.join(DATA_DIR, "evaluation")
 if ROOT_DIR not in sys.path:
     sys.path.insert(0, ROOT_DIR)
 
-from service_api import QueryRequest, query
+from app.service_api import QueryRequest, query
 
 
 BENCHMARK_CASES = [

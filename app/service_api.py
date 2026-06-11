@@ -8,13 +8,13 @@ from fastapi import FastAPI
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel, Field
 
-from api_llm import ApiLLM, TaskType
-from company_table import load_company_table
-from financial_agent_workflow import FinancialAnnualReportWorkflow
-from project_meta import PROJECT_DESCRIPTION
-from project_meta import PROJECT_NAME
-from project_meta import PROJECT_SUBTITLE
-import question_util
+from .api_llm import ApiLLM, TaskType
+from .company_table import load_company_table
+from .financial_agent_workflow import FinancialAnnualReportWorkflow
+from .project_meta import PROJECT_DESCRIPTION
+from .project_meta import PROJECT_NAME
+from .project_meta import PROJECT_SUBTITLE
+from . import question_util
 
 
 def _model_to_dict(model):

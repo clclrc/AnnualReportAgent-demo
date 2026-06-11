@@ -4,9 +4,9 @@ import shutil
 from multiprocessing import Pool
 from loguru import logger
 from config import cfg
-from file import load_pdf_info
-from pdf_util import PdfExtractor
-from financial_state import (extract_basic_info, extract_employee_info,
+from app.file import load_pdf_info
+from legacy.pdf_util import PdfExtractor
+from legacy.financial_state import (extract_basic_info, extract_employee_info,
     extract_cbs_info, extract_cscf_info, extract_cis_info, extract_dev_info, merge_info)
 
 '''

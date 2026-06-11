@@ -1,6 +1,6 @@
-import company_table
+from . import company_table
 import re
-import prompt_util
+from . import prompt_util
 from loguru import logger
 
 '''

@@ -2,15 +2,15 @@ import os
 from datetime import datetime    # 时间处理
 from loguru import logger     # 日志记录库
 from config import cfg        # 导入项目配置文件
-from file import download_data     # 数据下载函数
-from company_table import count_table_keys, build_table   # 表格处理工具
-from api_llm import ApiLLM, TaskType
-from preprocess import extract_pdf_text, extract_pdf_tables   # PDF解析器
-from check import init_check_dir, check_text, check_tables   # 数据验证工具
+from app.file import download_data     # 数据下载函数
+from app.company_table import count_table_keys, build_table   # 表格处理工具
+from app.api_llm import ApiLLM, TaskType
+from legacy.preprocess import extract_pdf_text, extract_pdf_tables   # PDF解析器
+from legacy.check import init_check_dir, check_text, check_tables   # 数据验证工具
 # 答案生成流水线
-from generate_answer_with_classify import do_gen_keywords
-from generate_answer_with_classify import do_classification, do_sql_generation, generate_answer, make_answer 
-from project_meta import PROJECT_NAME, PROJECT_SUBTITLE
+from legacy.generate_answer_with_classify import do_gen_keywords
+from legacy.generate_answer_with_classify import do_classification, do_sql_generation, generate_answer, make_answer 
+from app.project_meta import PROJECT_NAME, PROJECT_SUBTITLE
 
 def check_paths():
     import ghostscript  # PDF处理底层依赖

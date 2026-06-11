@@ -7,21 +7,21 @@ from itertools import chain
 from loguru import logger
 from datetime import datetime
 
-import re_util
+from app import re_util
 from config import cfg
-from file import load_total_tables
-from file import load_tables_of_years
-from file import add_growth_rate_in_table
-from file import table_to_text, add_text_compare_in_table
-from file import load_pdf_info, load_test_questions
-from company_table import get_sql_search_cursor, load_company_table
-from recall_report_text import recall_annual_report_texts
-from recall_report_names import recall_pdf_tables
-import type2, type1
-import prompt_util
-import question_util
-import sql_correct_util
-from financial_agent_workflow import FinancialAnnualReportWorkflow
+from app.file import load_total_tables
+from app.file import load_tables_of_years
+from app.file import add_growth_rate_in_table
+from app.file import table_to_text, add_text_compare_in_table
+from app.file import load_pdf_info, load_test_questions
+from app.company_table import get_sql_search_cursor, load_company_table
+from app.recall_report_text import recall_annual_report_texts
+from app.recall_report_names import recall_pdf_tables
+from app import type2, type1
+from app import prompt_util
+from app import question_util
+from app import sql_correct_util
+from app.financial_agent_workflow import FinancialAnnualReportWorkflow
 
 '''
 对测试集问题进行分类，并将结果保存到csv文件中。

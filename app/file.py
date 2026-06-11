@@ -5,7 +5,7 @@ import pandas as pd  # 处理结构化数据x
 from loguru import logger  # 日志记录库
 from functools import cmp_to_key
 from config import cfg  # 导入配置文件
-import re_util  # 自定义正则表达式相关的工具函数
+from . import re_util  # 自定义正则表达式相关的工具函数
 
 
 '''

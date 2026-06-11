@@ -8,27 +8,27 @@ from typing import Dict, List, Optional
 from loguru import logger
 
 from config import cfg
-from company_table import get_sql_search_cursor, load_company_table
-from file import add_growth_rate_in_table
-from file import add_text_compare_in_table
-from file import load_pdf_info
-from file import load_pdf_pure_text
-from file import load_tables_of_years
-from file import load_test_questions
-from file import load_total_tables
-from file import table_to_text
-from project_meta import PROJECT_DESCRIPTION
-from project_meta import PROJECT_NAME
-from project_meta import PROJECT_SUBTITLE
-from prompt_util import get_prompt_single_question
-from prompt_registry import get_prompt_version_snapshot
-import prompt_util
-import question_util
-from recall_report_names import recall_pdf_tables
-from recall_report_text import recall_annual_report_texts
-import sql_correct_util
-import type1
-import type2
+from .company_table import get_sql_search_cursor, load_company_table
+from .file import add_growth_rate_in_table
+from .file import add_text_compare_in_table
+from .file import load_pdf_info
+from .file import load_pdf_pure_text
+from .file import load_tables_of_years
+from .file import load_test_questions
+from .file import load_total_tables
+from .file import table_to_text
+from .project_meta import PROJECT_DESCRIPTION
+from .project_meta import PROJECT_NAME
+from .project_meta import PROJECT_SUBTITLE
+from .prompt_util import get_prompt_single_question
+from .prompt_registry import get_prompt_version_snapshot
+from . import prompt_util
+from . import question_util
+from .recall_report_names import recall_pdf_tables
+from .recall_report_text import recall_annual_report_texts
+from . import sql_correct_util
+from . import type1
+from . import type2
 
 
 QUESTION_ROUTE_METADATA = {
@@ -113,26 +113,26 @@ QUESTION_ROUTE_METADATA = {
 
 TARGET_ARCHITECTURE_CODE_MAP = {
     "Query Router": [
-        "generate_answer_with_classify.py::do_classification",
-        "financial_agent_workflow.py::QueryRouter",
+        "legacy/generate_answer_with_classify.py::do_classification",
+        "app/financial_agent_workflow.py::QueryRouter",
     ],
     "Document Evidence Retrieval": [
-        "financial_agent_workflow.py::DocumentEvidenceRetriever",
-        "recall_report_text.py::recall_annual_report_texts",
-        "recall_report_names.py::recall_pdf_tables",
-        "file.py::table_to_text",
+        "app/financial_agent_workflow.py::DocumentEvidenceRetriever",
+        "app/recall_report_text.py::recall_annual_report_texts",
+        "app/recall_report_names.py::recall_pdf_tables",
+        "app/file.py::table_to_text",
     ],
     "Structured Query": [
-        "financial_agent_workflow.py::StructuredQueryExecutor",
-        "generate_answer_with_classify.py::do_sql_generation",
-        "sql_correct_util.py",
-        "company_table.py",
+        "app/financial_agent_workflow.py::StructuredQueryExecutor",
+        "legacy/generate_answer_with_classify.py::do_sql_generation",
+        "app/sql_correct_util.py",
+        "app/company_table.py",
     ],
     "Synthesis": [
-        "financial_agent_workflow.py::AnswerSynthesizer",
-        "type1.py",
-        "type2.py",
-        "prompt_util.py",
+        "app/financial_agent_workflow.py::AnswerSynthesizer",
+        "app/type1.py",
+        "app/type2.py",
+        "app/prompt_util.py",
     ],
 }
 

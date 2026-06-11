@@ -1,7 +1,7 @@
 import re
 from loguru import logger
 
-import prompt_util
+from . import prompt_util
 
 
 def normalize_company_name(text):
