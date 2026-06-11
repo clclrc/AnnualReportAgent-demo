@@ -4,6 +4,32 @@
 
 [English README](./README.md)
 
+## 快速理解
+
+- 这是什么
+  一个面向中文上市公司年报问答的多路由 Agent，同时覆盖结构化字段检索、SQL 统计分析和基于证据的开放式总结。
+
+- 为什么不是普通 RAG
+  不同问题类型走不同执行路径，而不是把所有问题都塞进一条统一检索链路。
+
+- 这个公开 demo 到底保留了什么
+  一个 14 条记录的结构化子集、4 个可回放样例卡片、1 份开放题文本切片，以及 benchmark 摘要证据。
+
+- 最快怎么验证它不是空壳
+  直接运行 `python scripts/replay_demo.py --sample sql_ranking_qa`，不需要 API key。
+
+## Quickstart
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python scripts/replay_demo.py --sample sql_ranking_qa
+```
+
+如果你只是想验证公开 demo，到这里就够了。
+如果你想接上真实模型接口继续跑 live inference，再往下看 `How to Run`。
+
 ## Overview
 
 这个项目不是把所有金融问答都塞进一条通用 RAG 链路，而是按问题类型走不同执行路径：
@@ -69,6 +95,25 @@ flowchart LR
 
 - `scripts/replay_demo.py`
   无需密钥的公开 demo 回放入口。
+
+## 建议先看
+
+如果面试官只愿意花 2-3 分钟扫这个仓库，最值得先看的入口是：
+
+- `README.md`
+  看项目定位、公开边界、运行方式和 benchmark 口径。
+
+- `app/service_api.py`
+  看公开 API 入口和 live query 的调用面。
+
+- `app/financial_agent_workflow.py`
+  看核心多路由工作流和带证据的答案生成逻辑。
+
+- `docs/samples/sql_ranking_qa.json`
+  看一个最能说明“为什么要单独做 SQL 路由”的紧凑样例。
+
+- `benchmarks/benchmark_card.json`
+  看整理后的公开 benchmark 摘要卡片。
 
 ## Repository Layout
 

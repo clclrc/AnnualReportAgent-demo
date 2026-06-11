@@ -4,6 +4,32 @@ Public demo repository for a multi-route financial annual report QA agent. This 
 
 [中文说明](./README.zh-CN.md)
 
+## At a Glance
+
+- What it is
+  A route-aware QA agent for Chinese listed-company annual reports, combining structured lookup, SQL-style analysis, and grounded open-text synthesis.
+
+- Why it is not just generic RAG
+  Different question types go through different execution paths instead of one retrieval prompt for everything.
+
+- What is public in this demo
+  A 14-record structured subset, 4 replayable sample cards, 1 open-text report slice, and benchmark summary artifacts.
+
+- Fastest way to verify value
+  Run `python scripts/replay_demo.py --sample sql_ranking_qa` without any API key.
+
+## Quickstart
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python scripts/replay_demo.py --sample sql_ranking_qa
+```
+
+If you only want the public demo, stop there.
+If you want live inference through an OpenAI-compatible endpoint, continue to `How to Run`.
+
 ## Overview
 
 This project answers Chinese financial annual report questions with different execution routes instead of a single generic RAG chain.
@@ -69,6 +95,25 @@ flowchart LR
 
 - `scripts/replay_demo.py`
   No-key demo replay entry for interview walkthroughs.
+
+## Start Here
+
+If a reviewer only spends 2-3 minutes on the repo, these are the best entry points:
+
+- `README.md`
+  High-level project framing, benchmark boundary, and run instructions.
+
+- `app/service_api.py`
+  Public API surface and live query entry point.
+
+- `app/financial_agent_workflow.py`
+  Core route-aware workflow and evidence-bearing answer generation.
+
+- `docs/samples/sql_ranking_qa.json`
+  A compact example that shows why the SQL route exists.
+
+- `benchmarks/benchmark_card.json`
+  The clean public benchmark summary card.
 
 ## Repository Layout
 
