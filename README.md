@@ -6,16 +6,16 @@ Public demo repository for a multi-route financial annual report QA agent. This 
 
 ## At a Glance
 
-- What it is
+- What it is:
   A route-aware QA agent for Chinese listed-company annual reports, combining structured lookup, SQL-style analysis, and grounded open-text synthesis.
 
-- Why it is not just generic RAG
+- Why it is not just generic RAG:
   Different question types go through different execution paths instead of one retrieval prompt for everything.
 
-- What is public in this demo
+- What is public in this demo:
   A 14-record structured subset, 4 replayable sample cards, 1 open-text report slice, and benchmark summary artifacts.
 
-- Fastest way to verify value
+- Fastest way to verify value:
   Run `python scripts/replay_demo.py --sample sql_ranking_qa` without any API key.
 
 ## Quickstart
